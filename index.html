@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شعار أنور - Anwar Logo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .logo-container {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo-bg {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        .logo-text {
+            position: relative;
+            font-size: 80px;
+            font-weight: bold;
+            color: #ffffff;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.5),
+                         0 0 40px rgba(255, 255, 255, 0.3);
+            animation: glow 2s ease-in-out infinite alternate;
+            z-index: 10;
+        }
+
+        .logo-text span {
+            display: inline-block;
+            animation: wave 1.5s ease-in-out infinite;
+        }
+
+        .logo-text span:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .logo-text span:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .logo-text span:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+
+        .logo-text span:nth-child(4) {
+            animation-delay: 0.3s;
+        }
+
+        .circle {
+            position: absolute;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            animation: rotate 10s linear infinite;
+        }
+
+        .circle-1 {
+            width: 200px;
+            height: 200px;
+            animation-duration: 8s;
+        }
+
+        .circle-2 {
+            width: 280px;
+            height: 280px;
+            animation-duration: 12s;
+            animation-direction: reverse;
+        }
+
+        .circle-3 {
+            width: 360px;
+            height: 360px;
+            animation-duration: 15s;
+        }
+
+        .particle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .particle:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .particle:nth-child(2) {
+            top: 80%;
+            left: 20%;
+            animation-delay: 0.5s;
+        }
+
+        .particle:nth-child(3) {
+            top: 30%;
+            right: 15%;
+            animation-delay: 1s;
+        }
+
+        .particle:nth-child(4) {
+            bottom: 25%;
+            right: 10%;
+            animation-delay: 1.5s;
+        }
+
+        .shine {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg,
+                transparent 0%,
+                rgba(255, 255, 255, 0.3) 50%,
+                transparent 100%);
+            animation: shine 3s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 0.8;
+            }
+        }
+
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 20px rgba(255, 255, 255, 0.5),
+                            0 0 40px rgba(255, 255, 255, 0.3),
+                            0 0 60px rgba(255, 255, 255, 0.2);
+            }
+            100% {
+                text-shadow: 0 0 30px rgba(255, 255, 255, 0.8),
+                            0 0 60px rgba(255, 255, 255, 0.5),
+                            0 0 90px rgba(255, 255, 255, 0.3);
+            }
+        }
+
+        @keyframes wave {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            25% {
+                transform: translateY(-15px) rotate(-5deg);
+            }
+            75% {
+                transform: translateY(-10px) rotate(5deg);
+            }
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+                opacity: 0.4;
+            }
+            50% {
+                transform: translateY(-30px);
+                opacity: 1;
+            }
+        }
+
+        @keyframes shine {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        .subtitle {
+            position: absolute;
+            bottom: 50px;
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0.8);
+            animation: fadeInOut 4s ease-in-out infinite;
+        }
+
+        @keyframes fadeInOut {
+            0%, 100% {
+                opacity: 0.5;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .logo-container {
+                width: 300px;
+                height: 300px;
+            }
+
+            .logo-text {
+                font-size: 60px;
+            }
+
+            .circle-1 {
+                width: 150px;
+                height: 150px;
+            }
+
+            .circle-2 {
+                width: 210px;
+                height: 210px;
+            }
+
+            .circle-3 {
+                width: 270px;
+                height: 270px;
+            }
+
+            .subtitle {
+                font-size: 18px;
+                bottom: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-container">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+
+        <div class="circle circle-3"></div>
+        <div class="circle circle-2"></div>
+        <div class="circle circle-1"></div>
+
+        <div class="logo-bg"></div>
+
+        <div class="logo-text">
+            <span>أ</span><span>ن</span><span>و</span><span>ر</span>
+        </div>
+
+        <div class="shine"></div>
+
+        <div class="subtitle">Anwar</div>
+    </div>
+</body>
+</html>
